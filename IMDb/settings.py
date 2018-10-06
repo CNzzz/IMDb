@@ -68,7 +68,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-#  'IMDb.pipelines.ImdbPipeline': 300,
+    'IMDb.pipelines.ImdbPipeline': 300,
     'IMDb.pipelines.MongoPipeline':301,
 }
 

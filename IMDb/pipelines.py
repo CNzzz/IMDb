@@ -5,10 +5,12 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pymongo
+from IMDb.utils import trans
 
 
 class ImdbPipeline(object):
     def process_item(self, item, spider):
+        item['Description'] = trans(item['Description'])
         return item
 
 class MongoPipeline(object):
@@ -27,8 +29,6 @@ class MongoPipeline(object):
         self.db = self.client[self.mongo_db]
 
     def process_item(self,item,spider):
-        if self.db[item.collection].find_one(dict(item)):
-            return
         self.db[item.collection].insert(dict(item))
 
 
