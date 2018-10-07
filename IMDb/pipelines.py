@@ -11,6 +11,7 @@ from IMDb.utils import trans
 class ImdbPipeline(object):
     def process_item(self, item, spider):
         item['Description'] = trans(item['Description'])
+        item['Name'] = trans(item['Name'])
         return item
 
 class MongoPipeline(object):
