@@ -69,7 +69,7 @@ ROBOTSTXT_OBEY = False
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'IMDb.pipelines.ImdbPipeline': 300,
-    'IMDb.pipelines.MongoPipeline':301,
+    #'IMDb.pipelines.MongoPipeline':301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
